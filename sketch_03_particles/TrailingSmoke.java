@@ -21,7 +21,7 @@ class TrailingSmoke implements ISpawner {
   private IParticle _spawnFirst() {
     this.first = new Particle();
     this.first.run(new RunPosRand(300, 300, 10));
-    this.first.run(new RunVelRand(5));
+    this.first.run(new RunVelRand(4));
     this.first.run(new RunMagRand(2, 5));
     this.first.run(new RunCol(80));
     this.first.addMod(new GravityMod(this.gravity));

@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class Particles implements IParticles {
+class SpawnerGroup implements ISpawnerGroup {
 
   List<ISpawner> spawners;
   List<IParticle> particles = new ArrayList<IParticle>();
 
-  public Particles() {  }
-  public Particles(List<ISpawner> spawners) {
+  public SpawnerGroup() {  }
+  public SpawnerGroup(List<ISpawner> spawners) {
     this.spawners = spawners;
   }
 

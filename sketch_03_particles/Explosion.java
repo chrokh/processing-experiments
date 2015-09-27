@@ -19,6 +19,14 @@ class Explosion extends ParticleAnimation {
 
       this.groups.add(group);
     }
+
+    int pieceCount = 3;
+    for(int i=0; i<pieceCount; i++) {
+      List<ISpawner> spawners = new ArrayList<ISpawner>();
+      spawners.add(new PieceSpawner(3));
+      ISpawnerGroup group = new SpawnerGroup(spawners);
+      this.groups.add(group);
+    }
   }
 
   public List<ISpawnerGroup> getGroups() {

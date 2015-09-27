@@ -28,6 +28,14 @@ class Vec {
     return this.v.x;
   }
 
+  public void y(float y) {
+    this.v.y = y;
+  }
+
+  public void x(float x) {
+    this.v.x = x;
+  }
+
   public Vec mult(Vec other) {
     return new Vec(this.v.mult(other.raw(), 1));
   }

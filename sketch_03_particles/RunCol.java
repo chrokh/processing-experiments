@@ -1,13 +1,17 @@
 class RunCol implements IRun{
 
-  int col;
+  Color color;
+
+  public RunCol(Color col) {
+    this.color = col;
+  }
 
   public RunCol(int col) {
-    this.col = col;
+    this.color = new Color(col);
   }
 
   public void run(IParticle p) {
-    p.setCol(this.col);
+    p.setCol(this.color);
   }
 
 }

@@ -8,7 +8,7 @@ class Particle implements IParticle {
   Vec pos;
   Vec vel;
   Vec mag;
-  int col;
+  Color col;
 
   public Particle() { }
   public Particle(List<IRun> runs, ArrayList<IMod> mods) {
@@ -30,7 +30,7 @@ class Particle implements IParticle {
     this.mag = mag;
   }
 
-  public void setCol(int col) {
+  public void setCol(Color col) {
     this.col = col;
   }
 
@@ -46,7 +46,7 @@ class Particle implements IParticle {
     return this.mag;
   }
 
-  public int getCol() {
+  public Color getCol() {
     return this.col;
   }
 
@@ -69,7 +69,7 @@ class Particle implements IParticle {
 
   public void draw() {
     App.get().noStroke();
-    App.get().fill(this.col);
+    App.get().fill(this.col.toInt());
     App.get().ellipse(this.pos.x(), this.pos.y(), this.mag.x(), this.mag.y());
   }
 }

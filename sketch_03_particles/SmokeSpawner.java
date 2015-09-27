@@ -18,10 +18,10 @@ class SmokeSpawner implements ISpawner {
 
       IParticle p = new Particle();
       p.run(new RunPosRand(300, 300, 10));
-      p.run(new RunVelRand(1.4f));
+      p.run(new RunVelRand(1.2f));
       p.run(new RunMagRand(10, 20));
-      p.run(new RunCol(255));
-      //p.addMod(new ModVelDec());
+      p.run(new RunCol(new Color(255, 255, 255, 200)));
+      p.addMod(new FadeMod(4, 0.2f));
 
       return p;
     }

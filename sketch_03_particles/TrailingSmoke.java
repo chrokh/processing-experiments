@@ -41,6 +41,7 @@ class TrailingSmoke implements ISpawner {
     particle.run(new RunCol(140));
     particle.addMod(new GravityMod(this.gravity));
     particle.addMod(new GrowMod(1.02f));
+    particle.addMod(new FadeMod(3));
 
     return particle;
   }

@@ -29,7 +29,7 @@ class Explosion extends ParticleAnimation {
       this.groups.add(group);
     }
 
-    int pieceCount = 3;
+    int pieceCount = (int)App.get().random(3, 12);
     for(int i=0; i<pieceCount; i++) {
       List<ISpawner> spawners = new ArrayList<ISpawner>();
       spawners.add(new PieceSpawner(3));

@@ -19,9 +19,10 @@ class PieceSpawner implements ISpawner {
       IParticle p = new Particle();
       p.run(new RunPosRand(300, 300, 10));
       p.run(new RunVelRand(5));
-      p.run(new RunMagRand(5, 10));
+      p.run(new RunMagRand(1, 5));
       p.run(new RunCol(140));
       p.addMod(new GravityMod());
+      p.addMod(new FadeMod(1));
 
       return p;
     }

@@ -8,10 +8,10 @@ interface IParticle {
   public void setPos(Vec v);
   public void setVel(Vec v);
   public void setMag(Vec v);
-  public void setCol(int c);
+  public void setCol(Color c);
 
   public Vec getPos();
   public Vec getVel();
   public Vec getMag();
-  public int getCol();
+  public Color getCol();
 }

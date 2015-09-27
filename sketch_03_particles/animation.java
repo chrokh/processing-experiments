@@ -1,43 +1,37 @@
 import java.util.ArrayList;
-import processing.core.PVector;
-import processing.core.PApplet;
-import static java.lang.System.out;
+import java.util.List;
 
 class Animation {
-  ArrayList<Explosion> explosions;
+  List<IParticles> particless;
   int counter;
-  PApplet app;
 
-  public Animation(PApplet app) {
-    this.app = app;
+  public Animation() {
     this.setup();
   }
 
   private void setup() {
-    this.explosions = new ArrayList<Explosion>();
     this.counter = 0;
-    PVector pos = new PVector(300, 300);
-    int density = 250;
-    float speed = 0.8f;
-    float size  = 15f;
-    int multitasking = 3000;
-    float velMax = 2.5f;
-    explosions.add(new Explosion(app, pos, density, multitasking, speed, size, velMax));
-  }
+    this.particless = new ArrayList<IParticles>();
 
-  public void update() {
-    if(counter < 100) {
-      this.counter++;
-      for(Explosion e : this.explosions)
-        e.update();
-    } else {
-      this.setup();
+    for(int i=0; i<80; i++) {
+      List<ISpawner> spawners = new ArrayList<ISpawner>();
+      spawners.add(new SmokeSpawner(5));
+      this.particless.add(new Particles(spawners));
     }
   }
 
+  public void update() {
+    if(counter > 100)
+      this.setup();
+    this.counter++;
+
+    for(IParticles ps : this.particless)
+      ps.update();
+  }
+
   public void draw() {
-    for(Explosion e : this.explosions)
-      e.draw();
+    for(IParticles ps : this.particless)
+      ps.draw();
   }
 }
 

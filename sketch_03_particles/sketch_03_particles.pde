@@ -2,16 +2,15 @@ Animation animation;
 
 void setup() {
   size(600, 600);
-  background(#000000);
-  print(this);
-  animation = new Animation(this);
+  background(0);
+  App.set(this);
+  animation = new Animation();
 }
 
 
 void draw() {
-  background(#000000);
+  background(0);
   animation.update();
   animation.draw();
 }
-
 
